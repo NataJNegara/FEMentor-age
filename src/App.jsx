@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import FormRow from "./components/FormRow";
+import { countAge } from "./utils/countAge";
 
 export default function App() {
   const [day, setDay] = useState(0);
@@ -10,13 +11,6 @@ export default function App() {
   // for validation
   const currentYears = new Date().getFullYear();
 
-  // get current date
-  let today = new Date();
-  let currDate = today.getDate();
-  let currMonth = today.getMonth() + 1;
-  let currYear = today.getFullYear();
-  let dateInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
   const {
     register,
     handleSubmit,
@@ -24,22 +18,11 @@ export default function App() {
   } = useForm();
 
   function onSubmit(data) {
-    // console.log(data);
-    countAge(data);
-  }
+    const age = countAge(data);
 
-  function countAge(data) {
-    if (data.date > currDate) {
-      currDate = currDate + dateInMonth[currMonth - 1];
-      currMonth = currMonth - 1;
-    }
-    if (data.month > currMonth) {
-      currMonth = currMonth + 12;
-      currYear = currYear - 1;
-    }
-    setDay(currDate - data.date);
-    setMonth(currMonth - data.month);
-    setYear(currYear - data.year);
+    setDay(age.day);
+    setMonth(age.month);
+    setYear(age.year);
   }
 
   return (
