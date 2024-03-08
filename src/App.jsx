@@ -100,7 +100,7 @@ export default function App() {
           </p>
           <p>
             <span className="text-purple">{month <= 0 ? "--" : month}</span>{" "}
-            month
+            months
           </p>
           <p>
             <span className="text-purple">{day <= 0 ? "--" : day}</span> days

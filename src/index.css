@@ -4,7 +4,7 @@
 
 @layer components {
   .input {
-    @apply border-[1px] border-light-grey p-2 w-20 md:w-32 rounded-md text-base md:text-[32px] font-bold text-off-black;
+    @apply border-[1px] border-light-grey p-2 w-20 md:w-32 rounded-md text-base md:text-[32px] font-bold text-off-black outline-none focus:border-purple focus:caret-purple;
   }
 
   .label {
