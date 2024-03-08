@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply border-[1px] border-light-grey p-2 w-20 md:w-32 rounded-md text-base md:text-[32px] font-bold text-off-black;
+  }
+
+  .label {
+    @apply text-xs font-semibold tracking-widest md:text-sm text-smokey-grey;
+  }
+}
